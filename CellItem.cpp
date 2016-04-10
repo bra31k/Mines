@@ -31,6 +31,7 @@ void CellItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     painter->setRenderHint(QPainter::Antialiasing);
     painter->setRenderHint(QPainter::HighQualityAntialiasing);
 
+    static const int border = 4;
     painter->drawRect(0, 0, cellSize, cellSize);
 
     if (m_cell->isOpen()) {
@@ -39,6 +40,8 @@ void CellItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
         } else if (m_cell->minesAround() != 0) {
             m_text->setText(QString::number(m_cell->minesAround()));
         }
+    } else {
+        painter->fillRect(border, border, cellSize - border * 2, cellSize - border * 2, Qt::lightGray);
     }
 }
 void CellItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
