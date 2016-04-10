@@ -26,8 +26,8 @@ void Field::setNumberOfMines(int number)
 
 void Field::generate()
 {
+    qsrand(10);
     int minesToPlace = m_numberOfMines;
-
     while (minesToPlace > 0) {
         Cell *cell = m_cells.at(qrand() % m_cells.count());
 
