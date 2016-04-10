@@ -32,7 +32,15 @@ void Cell::setHaveMine(bool haveMine)
 
 void Cell::open()
 {
+    if (m_open){
+        return;
+    }
     m_open = true;
+    if (minesAround() == 0){
+        for(Cell *cell :getNeighbors()){
+            cell->open();
+        }
+    }
 }
 
 void maybeAddCell(QVector<Cell*> *vector, Cell *cell)
