@@ -38,7 +38,9 @@ void Field::generate()
         cell->setHaveMine(true);
         --minesToPlace;
     }
+    m_generated = true;
 }
+
 
 Cell *Field::cellAt(int x, int y) const
 {
@@ -54,7 +56,7 @@ Cell *Field::cellAt(int x, int y) const
 
 void Field::prepare()
 {
-
+    m_generated = false;
     for (int i = 0; i < m_cells.size();i++) {
         m_cells[i]->reset();
 

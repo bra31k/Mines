@@ -20,13 +20,14 @@ public:
 
     Cell *cellAt(int x, int y) const;
     void prepare();
+    bool isGenerated() const {return m_generated;}
 
 private:
     QVector<Cell*> m_cells;
 
     int m_width;
     int m_height;
-
+    bool m_generated;
     int m_numberOfMines;
 };
 
