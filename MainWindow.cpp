@@ -4,7 +4,6 @@
 #include "Field.hpp"
 
 #include "CellItem.hpp"
-
 #include <QGLWidget>
 #include <QGraphicsScene>
 #include <QTimer>
@@ -30,14 +29,13 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     newGame();
-
-    m_field->generate();
+    m_field->generate(x(),y());
 }
 
 void MainWindow::newGame()
 {
     m_field->prepare();
-    m_field->generate();
+    //m_field->generate(x(),y());
     m_scene->update();
 }
 

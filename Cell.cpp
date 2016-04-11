@@ -39,7 +39,7 @@ void Cell::setHaveMine(bool haveMine)
 void Cell::open()
 {
     if (m_field->isGenerated()== 0){
-       m_field->generate();
+       m_field->generate(m_x,m_y);
     }
     if (m_open){
         return;
