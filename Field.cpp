@@ -51,3 +51,13 @@ Cell *Field::cellAt(int x, int y) const
 
     return m_cells.at(x + y * m_width);
 }
+
+void Field::prepare()
+{
+
+    for (int i = 0; i < m_cells.size();i++) {
+        m_cells[i]->reset();
+
+    }
+}
+

@@ -19,6 +19,7 @@ public:
     int height() const { return m_height; }
 
     Cell *cellAt(int x, int y) const;
+    void prepare();
 
 private:
     QVector<Cell*> m_cells;

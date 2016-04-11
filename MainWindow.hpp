@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void newGame();
 
 protected:
     void resizeEvent(QResizeEvent *event);
@@ -24,6 +25,9 @@ protected:
 protected slots:
     void updateSceneScale();
 
+
+private slots:
+    void on_actionNew_game_triggered();
 
 private:
     Ui::MainWindow *ui;
