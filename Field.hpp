@@ -21,6 +21,7 @@ public:
     Cell *cellAt(int x, int y) const;
     void prepare();
     bool isGenerated() const {return m_generated;}
+    void lose();
 
 private:
     QVector<Cell*> m_cells;

@@ -51,6 +51,9 @@ void Cell::open()
 
         }
     }
+    if (haveMine()){
+        m_field->lose();
+    }
     }
 
 

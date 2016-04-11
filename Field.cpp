@@ -45,6 +45,7 @@ void Field::generate(int x,int y)
 }
 
 
+
 Cell *Field::cellAt(int x, int y) const
 {
     if (x < 0 || x >= m_width) {
@@ -64,5 +65,12 @@ void Field::prepare()
         m_cells[i]->reset();
 
     }
+}
+
+void Field::lose()
+{
+    for (int i = 0; i < m_cells.size();i++) {
+        m_cells[i]->open();
+}
 }
 
