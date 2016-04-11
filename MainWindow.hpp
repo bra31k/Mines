@@ -24,6 +24,7 @@ protected:
 protected slots:
     void updateSceneScale();
 
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *m_scene;
